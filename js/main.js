@@ -27,6 +27,11 @@ const buttonClearCart = document.querySelector('.clear-cart')
 
 let login = localStorage.getItem('Dinkamandarinka');
 
+const valid = function(str) {
+	const nameReg = /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/;
+	return nameReg.test(str);
+}
+
 const cart = [];
 
 const getData = async function(url) {
@@ -89,7 +94,7 @@ function notAuthorized() {
     function logIn(event) {
         event.preventDefault();
 
-        if (loginInput.value.trim()) {
+        if (valid(loginInput.value.trim())) {
             login = loginInput.value;
             localStorage.setItem('Dinkamandarinka', login);
             toggleModalAuth();
