@@ -320,6 +320,5 @@ logo.addEventListener('click', function() {
 new Swiper('.swiper-container', {
     loop: true,
     autoplay: true,
-    slidePreview: 3
 })
 
